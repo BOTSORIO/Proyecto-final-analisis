@@ -36,8 +36,10 @@ router.get('/general', isLoggedIn, (req, res) => {
 });
 
 router.get('/logout', isLoggedIn , (req, res) => {
-    req.logOut();
-    res.redirect('/signin');
+    req.logout(req.user, err => {
+        if(err) return next(err);
+        res.redirect('/signin');
+      });
 });
 
 module.exports = router;
