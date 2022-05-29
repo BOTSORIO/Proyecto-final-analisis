@@ -1,3 +1,141 @@
-<div class="container p-4">
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
 
+    <a class="navbar-brand" href="/"><i class="fa-solid fa-dice-d6"></i> Test analisis</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          {{#if user}}
+            <li class="nav-item">
+              <a class="navbar-brand" href="/logout">Cerrar sesión</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="navbar-brand" href="profile">Perfil</a>
+            </li>
+
+            {{else}}
+              <a class="navbar-brand" href="/signin">Inciar sesión</a>
+
+              <a class="navbar-brand" href="/signup">Registrarse</a>
+            {{/if}}
+        </ul>
+      </div>
+  </div>
+</nav>
+
+<div class="container p-0" id="container-question">
+  <div class="aside">
+    <div class="continer p-2">
+
+      <div class="title">
+        <h1><b>Reto #1</b></h1>
+      </div>
+
+      <div class="row" style="margin-top: 10%;">
+        <div class="col-1">
+           <img src="/img/dinotable.png" alt=" " id="dinotable">
+        </div>
+        <div class="col">
+            <aside>
+              <div class="cont-tablero">
+                  <div class="tab-fila">
+                      <div class="tab-col" id="0"><img src="/img/fin.png" alt=" "></div>
+                      <div class="tab-col" id="1"></div>
+                      <div class="tab-col" id="2"></div>
+                      <div class="tab-col" id="3"></div>
+                      <div class="tab-col" id="4"></div>
+                  </div>
+
+                  <div class="tab-fila">
+                      <div class="tab-col" id="5"></div>
+                      <div class="tab-col" id="6"></div>
+                      <div class="tab-col" id="7"></div>
+                      <div class="tab-col" id="8"></div>
+                      <div class="tab-col" id="9"></div>
+                  </div>
+
+                  <div class="tab-fila">
+                      <div class="tab-col" id="10"></div>
+                      <div class="tab-col" id="11"></div>
+                      <div class="tab-col" id="12"></div>
+                      <div class="tab-col" id="13"></div>
+                      <div class="tab-col" id="14"></div>
+                  </div>
+
+                  <div class="tab-fila">
+                      <div class="tab-col" id="15"></div>
+                      <div class="tab-col" id="16"></div>
+                      <div class="tab-col" id="17"></div>
+                      <div class="tab-col" id="18"></div>
+                      <div class="tab-col" id="19"></div>
+                  </div>
+
+                  <div class="tab-fila">
+                      <div class="tab-col" id="20"><img src="/img/inicio.png" alt=" " id="inicio"></div>
+                      <div class="tab-col" id="21"></div>
+                      <div class="tab-col" id="22"></div>
+                      <div class="tab-col" id="23"></div>
+                      <div class="tab-col" id="25"></div>
+                  </div>
+              </div>
+          </aside>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div class="main">
+    <div class="continer p-2">
+    
+      <div class="title">
+        <h1><b>Respuesta</b></h1>
+      </div>
+
+      <div class="container" id="text">
+        <div>
+            <h2><b>Ingresa la secuencia que creas correcta</b></h2>
+        </div>
+      </div>
+
+      <textarea class="form-control"></textarea>
+
+      <div class="container" id="buttons">
+        <div class="row">
+          <div class="col">
+            <button>
+              <img src="/img/arriba.png" alt=" " style="width: 50px; height: 50px;">
+            </button>
+          </div>
+
+          <div class="col">
+            <button>
+              <img src="/img/abajo.png" alt=" " style="width: 50px; height: 50px;">
+            </button>
+          </div>
+
+          <div class="col">
+            <button>
+              <img src="/img/derecha.png" alt=" " style="width: 50px; height: 50px;">
+            </button>
+          </div>
+
+          <div class="col">
+            <button>
+              <img src="/img/izquierda.png" alt=" " style="width: 50px; height: 50px;">
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="img-dinol">
+        <img src="/img/dinoL.png" alt=" " id="dinoL">
+      </div>
+
+    </div>
+  </div>
 </div>

@@ -1,7 +1,8 @@
 /* Navbar and components */
 
 .navbar{
-    background: #15D2C1;
+    background: rgb(5, 98, 141);
+    font-family: 'Indie Flower', cursive;
 }
 
 /* Footer and components */
@@ -14,9 +15,7 @@ html {
 body {
     margin: 0;
     margin-bottom: 6.5%;
-    background: #f5f6f5;
-    font-family: 'Oswald', sans-serif;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 footer {
@@ -30,11 +29,11 @@ footer {
 }
 
 .footer {
-    background: #17202A;
+    background: rgb(5, 98, 141);
 }
 
 .footer .container {
-    background: #17202A;
+    background: rgb(5, 98, 141);
 }
 
 .footer .container .row .col .form-group {
@@ -73,9 +72,113 @@ footer {
     min-height: 30%;
     width: 100%;
     height: 100%;
-    background: url('/img/dinos.jpg');
+    background: url('/img/dinos.webp');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+aside {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cont-tablero {
+    width: 350px;
+    height: 350px;
+    margin: 40px auto;
+    margin-top: -10px !important;
+    box-shadow: 0px 0px 6px 8px rgb(5, 98, 141),
+                0px 0px 0px 16px rgb(6, 55, 83);
+    box-sizing: content-box;
+    cursor: pointer;
+}
+
+.cont-tablero .tab-fila {
+    display: flex;
+}
+
+.cont-tablero .tab-fila .tab-col {
+    background: #7fb432;
+    width: 73px;
+    height: 70px;
+    text-align: center;
+    user-select: none;
+    border: 1px solid white;
+}
+
+.cont-tablero .tab-fila .tab-col img{
+  width: 40px;
+  height: 50px;
+  margin-top: 8%;
+}
+
+.cont-tablero .tab-fila .tab-col #inicio {
+    width: 50px;
+    height: 60px;
+    margin-top: 8%;
+  }
+
+.aside, .main {
+    width: 50%;
+}
+
+#dinotable {
+    width: 100px;
+    height: 150px;
+    position: relative;
+    margin-top: 100px;
+    margin-left: -100%;
+}
+
+#dinoL {
+    width: 110px;
+    height: 130px;
+    margin-left: 80%;
+}
+
+#img-dinol {
+    margin-top: 6%;
+}
+
+#container-question {
+    display: flex;
+    width: 100vw;
+    margin-bottom: 10%;
+}
+
+.title {
+    text-align: center;
+    margin-top: 5%;
+    font-family: 'Indie Flower', cursive;
+    color: rgb(5, 98, 141);
+}
+
+.title h1 {
+    margin-left: 10%;
+}
+
+.main textarea {
+    height: 80px;
+    margin-top: 5%;
+    border: 0.5px solid black;
+}
+
+.main #buttons {
+    margin-top: 5%;
+}
+
+.main #buttons .row {
+    margin-left: 6%;
+}
+
+.main #buttons .row .col button {
+    border-radius: 10px;
+}
+
+.main #text {
+    margin-top: 5%;
+    font-family: 'Indie Flower', cursive;
+    text-align: justify;
+}
