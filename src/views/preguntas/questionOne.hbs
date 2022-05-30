@@ -108,25 +108,25 @@
         <div class="row">
               <div class="col">
               <button>
-                <img src="/img/arriba.png" alt="arriba" onclick="añadirImagenArriba()" style="width: 50px; height: 50px;">
+                <img src="/img/arriba.png" alt="arriba" onclick="añadirImagenArriba()">
               </button>
             </div>
 
             <div class="col">
               <button>
-                <img src="/img/abajo.png" alt="abajo" onclick="añadirImagenAbajo()" style="width: 50px; height: 50px;">
+                <img src="/img/abajo.png" alt="abajo" onclick="añadirImagenAbajo()">
               </button>
             </div>
 
             <div class="col">
               <button>
-                <img src="/img/derecha.png" alt="derecha" onclick="añadirImagenDerecha()" style="width: 50px; height: 50px;">
+                <img src="/img/derecha.png" alt="derecha" onclick="añadirImagenDerecha()">
               </button>
             </div>
 
             <div class="col">
               <button>
-                <img src="/img/izquierda.png" alt="izquierda" onclick="añadirImagenIzquierda()" style="width: 50px; height: 50px;">
+                <img src="/img/izquierda.png" alt="izquierda" onclick="añadirImagenIzquierda()">
               </button>
             </div>
         </div>
@@ -144,6 +144,7 @@
     var elem = document.createElement("img");
     elem.src = '/img/arriba.png';
     elem.setAttribute("alt", "arriba");
+    elem.style = 'width: 50px; height 50px';
 
     document.getElementById("ruta").appendChild(elem);
   }
@@ -153,6 +154,8 @@
     var elem = document.createElement("img");
     elem.src = '/img/abajo.png';
     elem.setAttribute("alt", "abajo");
+    elem.style = 'width: 50px; height 50px';
+
     document.getElementById("ruta").appendChild(elem);
   }
 
@@ -161,6 +164,8 @@
     var elem = document.createElement("img");
     elem.src = '/img/izquierda.png';
     elem.setAttribute("alt", "izquierda");
+    elem.style = 'width: 50px; height 50px';
+
     document.getElementById("ruta").appendChild(elem);
   }
 
@@ -169,6 +174,8 @@
     var elem = document.createElement("img");
     elem.src = '/img/derecha.png';
     elem.setAttribute("alt", "derecha");
+    elem.style = 'width: 50px; height 50px';
+
     document.getElementById("ruta").appendChild(elem);
   }
 

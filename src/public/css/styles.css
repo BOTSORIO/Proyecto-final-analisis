@@ -177,6 +177,11 @@ aside {
     border-radius: 10px;
 }
 
+.main #buttons .row .col button img {
+    width: 50px; 
+    height: 50px;
+}
+
 .main #text {
     margin-top: 5%;
     font-family: 'Indie Flower', cursive;
@@ -184,8 +189,9 @@ aside {
 }
 
 #ruta{
-    width:600px;
-    height:200px;
+    width:100%;
+    height:120px;
     border: 1px solid #ccc;
+    overflow: scroll;
 }
 
