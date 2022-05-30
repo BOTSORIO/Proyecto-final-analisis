@@ -102,40 +102,74 @@
         </div>
       </div>
 
-      <textarea class="form-control"></textarea>
+      <div id="ruta" contentEditable="true"></div>
 
       <div class="container" id="buttons">
         <div class="row">
-          <div class="col">
-            <button>
-              <img src="/img/arriba.png" alt=" " style="width: 50px; height: 50px;">
-            </button>
-          </div>
+              <div class="col">
+              <button>
+                <img src="/img/arriba.png" alt="arriba" onclick="añadirImagenArriba()" style="width: 50px; height: 50px;">
+              </button>
+            </div>
 
-          <div class="col">
-            <button>
-              <img src="/img/abajo.png" alt=" " style="width: 50px; height: 50px;">
-            </button>
-          </div>
+            <div class="col">
+              <button>
+                <img src="/img/abajo.png" alt="abajo" onclick="añadirImagenAbajo()" style="width: 50px; height: 50px;">
+              </button>
+            </div>
 
-          <div class="col">
-            <button>
-              <img src="/img/derecha.png" alt=" " style="width: 50px; height: 50px;">
-            </button>
-          </div>
+            <div class="col">
+              <button>
+                <img src="/img/derecha.png" alt="derecha" onclick="añadirImagenDerecha()" style="width: 50px; height: 50px;">
+              </button>
+            </div>
 
-          <div class="col">
-            <button>
-              <img src="/img/izquierda.png" alt=" " style="width: 50px; height: 50px;">
-            </button>
-          </div>
+            <div class="col">
+              <button>
+                <img src="/img/izquierda.png" alt="izquierda" onclick="añadirImagenIzquierda()" style="width: 50px; height: 50px;">
+              </button>
+            </div>
         </div>
       </div>
 
       <div id="img-dinol">
         <img src="/img/dinoL.png" alt=" " id="dinoL">
       </div>
-
     </div>
   </div>
 </div>
+
+<script>
+  function añadirImagenArriba() {
+    var elem = document.createElement("img");
+    elem.src = '/img/arriba.png';
+    elem.setAttribute("alt", "arriba");
+
+    document.getElementById("ruta").appendChild(elem);
+  }
+
+    function añadirImagenAbajo() {
+    
+    var elem = document.createElement("img");
+    elem.src = '/img/abajo.png';
+    elem.setAttribute("alt", "abajo");
+    document.getElementById("ruta").appendChild(elem);
+  }
+
+    function añadirImagenIzquierda() {
+    
+    var elem = document.createElement("img");
+    elem.src = '/img/izquierda.png';
+    elem.setAttribute("alt", "izquierda");
+    document.getElementById("ruta").appendChild(elem);
+  }
+
+    function añadirImagenDerecha() {
+    
+    var elem = document.createElement("img");
+    elem.src = '/img/derecha.png';
+    elem.setAttribute("alt", "derecha");
+    document.getElementById("ruta").appendChild(elem);
+  }
+
+</script>
