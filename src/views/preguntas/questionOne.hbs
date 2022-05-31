@@ -80,7 +80,7 @@
                       <div class="tab-col" id="21"></div>
                       <div class="tab-col" id="22"></div>
                       <div class="tab-col" id="23"></div>
-                      <div class="tab-col" id="25"></div>
+                      <div class="tab-col" id="24"></div>
                   </div>
               </div>
           </aside>
@@ -102,7 +102,7 @@
         </div>
       </div>
 
-      <div id="ruta" contentEditable="true"></div>
+      <div class="contenedor-ruta" id="ruta" contentEditable="true"></div>
 
       <div class="container" id="buttons">
         <div class="row">
@@ -132,51 +132,12 @@
         </div>
       </div>
 
+      <button onclick="comprobarRuta()">Comprobar</button>
+
       <div id="img-dinol">
         <img src="/img/dinoL.png" alt=" " id="dinoL">
       </div>
     </div>
   </div>
 </div>
-
-<script>
-  function añadirImagenArriba() {
-    var elem = document.createElement("img");
-    elem.src = '/img/arriba.png';
-    elem.setAttribute("alt", "arriba");
-    elem.style = 'width: 50px; height 50px';
-
-    document.getElementById("ruta").appendChild(elem);
-  }
-
-    function añadirImagenAbajo() {
-    
-    var elem = document.createElement("img");
-    elem.src = '/img/abajo.png';
-    elem.setAttribute("alt", "abajo");
-    elem.style = 'width: 50px; height 50px';
-
-    document.getElementById("ruta").appendChild(elem);
-  }
-
-    function añadirImagenIzquierda() {
-    
-    var elem = document.createElement("img");
-    elem.src = '/img/izquierda.png';
-    elem.setAttribute("alt", "izquierda");
-    elem.style = 'width: 50px; height 50px';
-
-    document.getElementById("ruta").appendChild(elem);
-  }
-
-    function añadirImagenDerecha() {
-    
-    var elem = document.createElement("img");
-    elem.src = '/img/derecha.png';
-    elem.setAttribute("alt", "derecha");
-    elem.style = 'width: 50px; height 50px';
-
-    document.getElementById("ruta").appendChild(elem);
-  }
-
-</script>
+<script src="/js/resolverPrueba.js"></script>
