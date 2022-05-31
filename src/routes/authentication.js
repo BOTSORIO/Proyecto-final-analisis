@@ -21,7 +21,7 @@ router.get('/signin', isNotLoggedIn, (req,res) => {
 
 router.post('/signin', isNotLoggedIn, (req,res,next) => {
     passport.authenticate('local.signin', {
-        successRedirect: '/profile',
+        successRedirect: 'general',
         failureRedirect: '/signin',
         failureFlash: true
     })(req,res,next);
@@ -31,14 +31,14 @@ router.get('/profile', isLoggedIn, (req, res) => {
     res.render('profile')
 });
 
-router.get('/general', isLoggedIn, (req, res) => {
+router.get('/general', (req, res) => {
     res.render('general')
 });
 
 router.get('/logout', isLoggedIn , (req, res) => {
     req.logout(req.user, err => {
         if(err) return next(err);
-        res.redirect('/signin');
+        res.redirect('general');
       });
 });
 

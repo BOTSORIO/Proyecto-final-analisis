@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
   <div class="container">
 
-    <a class="navbar-brand" href="/"><i class="fa-solid fa-dice-d6"></i> Test analisis</a>
+    <a class="navbar-brand" href="/general"><i class="fa-solid fa-dice-d6"></i> Test analisis</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -19,7 +19,7 @@
           </li>
 
           {{else}}
-           <a class="navbar-brand" href="/signin">Inciar sesión</a>
+           <a class="navbar-brand" href="/signin">Iniciar sesión</a>
 
            <a class="navbar-brand" href="/signup">Registrarse</a>
         {{/if}}
@@ -31,30 +31,38 @@
 
 <div class="container p-4">
     <div class="row">
-        <div class="col-md-4 mx-auto">
-            <div class="card text-center" id="card-signup">
-                <div class="card-body">
-                    <div class="card-title">
-                        <h3>Iniciar sesión</h3>
-                    </div>
+      <div class="col">
+        <img src="/img/dinosaurios.png" alt="" id="img-signin">
+      </div>
+        
+      <div class="col-md-4 mx-auto">
+          <div class="card text-center" id="card-signup">
+              <div class="card-body">
+                  <div class="card-title">
+                      <h2><b>Iniciar sesión</b></h2>
+                  </div>
 
-                    <form action="/signin" method="post">
-                        <div class="form-group">
-                            <input type="text" name="fullname" placeholder="Ingrese su nombre completo" class="form-control"  autofocus>
-                        </div>
-                        <br>
-                        <div class="form-group">
-                            <input type="password" name="document" placeholder="Ingrese su documento" class="form-control">
-                        </div>
-                        <br>
-                        <div class="form-group">
-                            <button class="btn btn-success" style="width: 50%;" >
-                                Iniciar sesión
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+                  <form action="/signin" method="post">
+                    <div class="form-group">
+                      <label for="fullname"><b>Nombre completo:</b></label>
+                      <input id="fullname" type="text" name="fullname" placeholder="Ingrese su nombre completo" class="form-control"  autofocus>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                      <label for="password"><b>Documento:</b></label>
+                      <input id="password" type="text" name="document" placeholder="Ingrese su documento" class="form-control">
+                    </div>
+                    <br>
+                    <button class="btn btn-success">
+                      Iniciar sesión
+                    </button>
+                </form>
+              </div>
+          </div>
+      </div>
+
+      <div class="col">
+          <img src="/img/dinosaurios2.png" alt="" id="img-signinD">
+      </div>
     </div>
 </div>

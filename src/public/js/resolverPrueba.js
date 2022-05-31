@@ -1,3 +1,9 @@
+
+const modal_container = document.getElementById('modal_container');
+const error = document.getElementById('error');
+const close = document.getElementById('close');
+const close2 = document.getElementById('close2');
+
 function añadirImagenArriba() {
   var elem = document.createElement("img");
   elem.src = '/img/arriba.png';
@@ -33,6 +39,7 @@ function añadirImagenDerecha() {
   document.getElementById("ruta").appendChild(elem);
 }
 
+
 function comprobarRuta(){
     var elementos = document.getElementsByClassName('contenedor-ruta');
     var arr = Array.from(elementos);
@@ -48,6 +55,7 @@ function comprobarRuta(){
         if(arr[0].childNodes[i].alt == "arriba"){
 
             elem.src = '/img/huellas-arriba.png';
+            elem.style = 'width: 60px; height 60px';
             elem.setAttribute("alt", "arriba");
             inicio = inicio-5;
             let posicion = inicio+"";
@@ -58,12 +66,6 @@ function comprobarRuta(){
               break;
 
             }else{
-
-              if(inicio==0){
-                alert("¡Llegaste al objetivo!");
-                break;
-              }
-
               document.getElementById(posicion).appendChild(elem);
             }
         }
@@ -71,6 +73,7 @@ function comprobarRuta(){
         if(arr[0].childNodes[i].alt == "abajo"){
 
           elem.src = '/img/huellas-abajo.png';
+          elem.style = 'width: 60px; height 60px';
           elem.setAttribute("alt", "arriba");
           inicio = inicio+5;
           let posicion = inicio+"";
@@ -81,12 +84,6 @@ function comprobarRuta(){
             break;
 
           }else{
-
-            if(inicio==0){
-              alert("¡Llegaste al objetivo!");
-              break;
-            }
-
             document.getElementById(posicion).appendChild(elem);
           }
         }
@@ -94,6 +91,7 @@ function comprobarRuta(){
         if(arr[0].childNodes[i].alt == "izquierda"){
 
           elem.src = '/img/huellas-izquierda.png';
+          elem.style = 'width: 60px; height 60px';
           elem.setAttribute("alt", "arriba");
           inicio = inicio-1;
           let posicion = inicio+"";
@@ -104,12 +102,6 @@ function comprobarRuta(){
             break;
 
           }else{
-
-            if(inicio==0){
-              alert("¡Llegaste al objetivo!");
-              break;
-            }
-
             document.getElementById(posicion).appendChild(elem);
           }
         }
@@ -117,6 +109,7 @@ function comprobarRuta(){
         if(arr[0].childNodes[i].alt == "derecha"){
 
           elem.src = '/img/huellas-derecha.png';
+          elem.style = 'width: 60px; height 60px';
           elem.setAttribute("alt", "arriba");
           inicio = inicio+1;
           let posicion = inicio+"";
@@ -127,15 +120,23 @@ function comprobarRuta(){
             break;
 
           }else{
-
-            if(inicio==0){
-              alert("¡Llegaste al objetivo!");
-              break;
-            }
-
             document.getElementById(posicion).appendChild(elem);
           }
         }
     }
 
+    if(inicio==0){
+      modal_container.classList.add('show');
+
+      close.addEventListener('click', () => {
+        modal_container.classList.remove('show');
+      });
+      
+    }else{
+      error.classList.add('show-2');
+
+      close2.addEventListener('click', () => {
+      error.classList.remove('show-2');
+      });
+    }
 }
