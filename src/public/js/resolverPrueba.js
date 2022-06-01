@@ -45,7 +45,7 @@ function comprobarRuta(){
     var arr = Array.from(elementos);
 
     let tam = arr[0].childNodes.length;
-    let inicio = 20;
+    let inicio = 30;
     
     
     for(let i=0;i<tam;i++){
@@ -57,10 +57,10 @@ function comprobarRuta(){
             elem.src = '/img/huellas-arriba.png';
             elem.style = 'width: 60px; height 60px';
             elem.setAttribute("alt", "arriba");
-            inicio = inicio-5;
+            inicio = inicio-6;
             let posicion = inicio+"";
 
-            if(inicio<0 || inicio>24){
+            if(inicio<0 || inicio>35){
 
               alert("Ruta invalida");
               break;
@@ -75,10 +75,10 @@ function comprobarRuta(){
           elem.src = '/img/huellas-abajo.png';
           elem.style = 'width: 60px; height 60px';
           elem.setAttribute("alt", "arriba");
-          inicio = inicio+5;
+          inicio = inicio+6;
           let posicion = inicio+"";
 
-          if(inicio<0 || inicio>24){
+          if(inicio<0 || inicio>35){
               
             alert("Ruta invalida");
             break;
@@ -96,7 +96,7 @@ function comprobarRuta(){
           inicio = inicio-1;
           let posicion = inicio+"";
 
-          if(inicio<0 || inicio>24 || inicio==19 || inicio==14 || inicio==9 || inicio==4){
+          if(inicio<0 || inicio>35 || inicio==29 || inicio==23 || inicio==17 || inicio==11 || inicio==5){
               
             alert("Ruta invalida");
             break;
@@ -114,7 +114,7 @@ function comprobarRuta(){
           inicio = inicio+1;
           let posicion = inicio+"";
 
-          if(inicio<0 || inicio>24 || inicio==20 || inicio==15 || inicio==10 || inicio==5){
+          if(inicio<0 || inicio>35 || inicio==30 || inicio==24 || inicio==18 || inicio==12 || inicio==6){
               
             alert("Ruta invalida");
             break;
