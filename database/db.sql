@@ -9,12 +9,23 @@ CREATE TABLE usuario(
     document varchar(200) not null
 );
 
+CREATE TABLE respuestas_test(
+    id int not null PRIMARY KEY auto_increment,
+    pregunta1 boolean,
+    pregunta2 boolean,
+    pregunta3 boolean,
+    pregunta4 boolean,
+    pregunta5 boolean,
+    id_usuario int not null,
+    constraint fk_user foreign key (id_usuario) references usuario(id)
+);
+
 CREATE TABLE encuesta(
     id int not null PRIMARY KEY auto_increment,
     pregunta1 int not null,
     pregunta2 int not null,
     pregunta3 int not null,
     id_usuario int not null,
-    constraint fk_user foreign key (id_usuario) references usuarios(id) 
+    constraint fk_user foreign key (id_usuario) references usuario(id) 
 );
 
