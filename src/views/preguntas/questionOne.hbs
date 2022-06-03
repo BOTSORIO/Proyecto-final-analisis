@@ -1,30 +1,32 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
-  <div class="container">
+  <div class="container p-0 ">
 
-    <a class="navbar-brand" href="/general"><i class="fa-solid fa-dice-d6"></i> Test analisis</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          {{#if user}}
-            <li class="nav-item">
-              <a class="navbar-brand" href="/logout">Cerrar sesión</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="navbar-brand" href="profile">Perfil</a>
-            </li>
-
-            {{else}}
-              <a class="navbar-brand" href="/signin">Iniciar sesión</a>
-
-              <a class="navbar-brand" href="/signup">Registrarse</a>
-            {{/if}}
-        </ul>
+    <div class="row" style="width: 100vw;">
+      <div class="col-9">
+        <a class="navbar-brand" href="/general" style="margin-left: 5%;margin-top: 2%;"><i class="fa-solid fa-dice-d6"></i> Test analisis</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
       </div>
+
+      <div class="col-3">
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-left: 45%;">
+            {{#if user}}
+              <li class="nav-item">
+                <a class="navbar-brand" href="/logout">Cerrar sesión</a>
+              </li>
+
+              {{else}}
+                <a class="navbar-brand" href="/signin">Iniciar sesión</a>
+
+                <a class="navbar-brand" href="/signup">Registrarse</a>
+              {{/if}}
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </nav>
 
@@ -149,7 +151,7 @@
       <div id="img-dinol">
         <div class="row">
           <div class="col-7">
-            <button class="btn btn-secondary" onclick="comprobarRuta()" >Comprobar</button>
+            <button class="btn btn-secondary" onclick="comprobarRuta()">Comprobar</button>
           </div>
           <div class="col-3">
              <img src="/img/dinoL.jpg" alt=" " id="dinoL">
@@ -165,32 +167,15 @@
         <a type="button" class="btn-close" aria-label="Close" id="close" href="questionTwo"></a>
           <div class="row">
               <div class="col-7" id="text">
-                <h1><b>¡Correcto!</b></h1>
-                <h2><b>Llegaste al objetivo</b></h2>
+                <h1 id="titleerror"><b>¡Correcto!</b></h1>
+                <h2 id="texterror"><b>Llegaste al objetivo</b></h2>
               </div>
               <div class="col-3" id="img">
-                <img src="/img/dande.gif" alt="">
+                <img src="/img/dande.gif" alt="" id="imgError">
               </div>
           </div>
       </div>
     </div>
-
-  <div class="modal-container" id="error">
-    <div>
-      <button type="button" class="btn-close" aria-label="Close" id="close2" ></button>
-        <div class="row">
-            <div class="col-6" id="text">
-              <h1><b>¡Fallaste!</b></h1>
-              <h2><b>La ruta ingresada no te lleva al objetivo</b></h2>
-            </div>
-            <div class="col-4" id="img">
-              <img src="/img/sad.gif" alt="">
-            </div>
-        </div>
-    </div>
-  </div>
-
-
 
   </div>
 </div>

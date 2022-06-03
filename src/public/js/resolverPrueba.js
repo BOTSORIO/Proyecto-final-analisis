@@ -1,8 +1,6 @@
 
 const modal_container = document.getElementById('modal_container');
-const error = document.getElementById('error');
 const close = document.getElementById('close');
-const close2 = document.getElementById('close2');
 
 function añadirImagenArriba() {
   var elem = document.createElement("img");
@@ -133,10 +131,15 @@ function comprobarRuta(){
       });
       
     }else{
-      error.classList.add('show-2');
+      
+      modal_container.classList.add('show');
+      document.getElementById('titleerror').innerHTML = '<b>¡Fallaste!</b>';
+      document.getElementById('texterror').innerHTML = '<b>La ruta ingresada no te lleva al objetivo</b>';
+      document.getElementById('imgError').src = '/img/sad.gif';
+      document.getElementById('imgError').style = 'width: 150px; height: 180px;margin-top:30%'
 
-      close2.addEventListener('click', () => {
-      error.classList.remove('show-2');
+      close.addEventListener('click', () => {
+        modal_container.classList.remove('show');
       });
     }
 }
