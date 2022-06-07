@@ -26,6 +26,6 @@ CREATE TABLE encuesta(
     pregunta2 int not null,
     pregunta3 int not null,
     id_usuario int not null,
-    constraint fk_user foreign key (id_usuario) references usuario(id) 
+    constraint fk_user2 foreign key (id_usuario) references usuario(id) 
 );
 

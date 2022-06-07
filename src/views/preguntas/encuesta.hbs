@@ -1,0 +1,95 @@
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container p-0 ">
+
+    <div class="row" style="width: 100vw;">
+      <div class="col-9">
+        <a class="navbar-brand" href="/general" style="margin-left: 5%;margin-top: 2%;"><i class="fa-solid fa-dice-d6"></i> Test analisis</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <div class="col-3">
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="margin-left: 45%;">
+            {{#if user}}
+              <li class="nav-item">
+                <a class="navbar-brand" href="/logout">Cerrar sesión</a>
+              </li>
+
+              {{else}}
+                <a class="navbar-brand" href="/signin">Iniciar sesión</a>
+
+                <a class="navbar-brand" href="/signup">Registrarse</a>
+              {{/if}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container mt-5 p-0">
+  <div class="card p-2" id="card-encuesta">
+      <div class="card-title p-0">
+        
+        <div class="row">
+          <div class="col-8" style="text-align: center;">
+            <h1><b>Encuesta de satisfacción</b></h1>
+          </div>
+          <div class="col">
+            <img src="/img/dinoE.webp" alt="" width="140" height="140">
+          </div>
+        </div>
+      </div>
+
+      <div class="container p-0">
+         <div class="card-body">
+            <h4><b>Responda las preguntas de 0 a 5, donde 0 es la nota minima y 5 la nota maxima</b></h4>
+            <br>
+          <form action="/test/encuesta" method="post">
+            <div class="form-group">
+              <div class="row">
+                <div class="col-10">
+                  <h4><b style="color: rgb(5, 98, 141);">1.</b> <b>¿Qué tan probable es que recomiendes a tus compañeros el test de pensamiento computacional?</b></h4>
+                </div>
+                <div class="col" style="text-align: right;">
+                  <input type="number" min="0" max="5" name="questionOne">
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-10">
+                  <h4><b style="color: rgb(5, 98, 141);">2.</b> <b>¿Qué posibilidades hay de que vuelvas a realizar el test de pensamiento computacional?</b></h4>
+                </div>
+                <div class="col" style="text-align: right;">
+                  <input type="number" min="0" max="5" name="questionTwo">
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-10">
+                  <h4><b style="color: rgb(5, 98, 141);">3.</b> <b>¿Qué tan satisfecho estas con el test de pensamiento computacional?</b></h4>
+                </div>
+                <div class="col" style="text-align: right;">
+                  <input type="number" min="0" max="5" name="questionThree">
+                </div>
+              </div>
+            </div>
+            <br>
+            <div style="text-align: center;margin-bottom: 3%;">
+              <button class="btn btn-success">
+                Terminar  
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+  </div>
+</div>

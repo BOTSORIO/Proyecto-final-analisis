@@ -164,7 +164,6 @@
   
     <div class="modal-container" id="modal_container">
       <div>
-        <a type="button" class="btn-close" aria-label="Close" id="close" href="questionFour"></a>
           <div class="row">
               <div class="col-7" id="text">
                 <h1 id="titleerror"><b>¡Correcto!</b></h1>
@@ -176,11 +175,18 @@
           </div>
 
           <form action="/test/answerFive" method="post">
-            <div class="form-group">
+           <div class="form-group">
               <input type="hidden" class="form-control" name="answer" id="respuesta">
               <div class="d-grid gap-2">
-                <button class="btn btn-success">
-                    Save
+                <button class="btn btn-success" id="save">
+                    <div class="row p-0" style="width: 100%;">
+                      <div class="col-9">
+                         <h6>Terminar</h6>
+                      </div>
+                      <div class="col">
+                        <i class="fa-solid fa-angles-right" id="arrow"></i>
+                      </div>
+                    </div>
                 </button>
               </div>
             </div>

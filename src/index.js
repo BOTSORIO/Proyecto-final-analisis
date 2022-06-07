@@ -55,6 +55,7 @@ app.use('/test', require('./routes/questionTwo'));
 app.use('/test', require('./routes/questionThree'));
 app.use('/test', require('./routes/questionFour'));
 app.use('/test', require('./routes/questionFive'));
+app.use('/test', require('./routes/encuesta'));
 
 //Public
 app.use(express.static(path.join(__dirname, 'public')));

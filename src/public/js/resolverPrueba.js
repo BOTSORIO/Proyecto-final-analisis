@@ -87,7 +87,7 @@ function comprobarRuta1(){
             }else{
 
               if(inicio!=0){
-                document.getElementById(posicion).appendChild(elem);
+                  document.getElementById(posicion).appendChild(elem);
               }
             }
         }
@@ -160,23 +160,17 @@ function comprobarRuta1(){
 
       document.getElementById('respuesta').value = "aprobado";
       modal_container.classList.add('show');
-
-      close.addEventListener('click', () => {
-        modal_container.classList.remove('show');
-      });
       
     }else{
       
       document.getElementById('respuesta').value = "no aprobado";
       modal_container.classList.add('show');
       document.getElementById('titleerror').innerHTML = '<b>¡Fallaste!</b>';
+      document.getElementById('titleerror').style = 'margin-top: -5%';
       document.getElementById('texterror').innerHTML = '<b>La ruta ingresada no te lleva al objetivo</b>';
+      document.getElementById('texterror').style = 'font-size: 28px';
       document.getElementById('imgError').src = '/img/sad.gif';
-      document.getElementById('imgError').style = 'width: 150px; height: 180px;margin-top:30%'
-
-      close.addEventListener('click', () => {
-        modal_container.classList.remove('show');
-      });
+      document.getElementById('imgError').style = 'width: 120px; height: 150px;margin-top:-5%;margin-left:30%';
     }
 }
 
@@ -285,23 +279,17 @@ function comprobarRuta2(){
 
     document.getElementById('respuesta').value = "aprobado";
     modal_container.classList.add('show');
-
-    close.addEventListener('click', () => {
-      modal_container.classList.remove('show');
-    });
     
   }else{
     
     document.getElementById('respuesta').value = "no aprobado";
     modal_container.classList.add('show');
     document.getElementById('titleerror').innerHTML = '<b>¡Fallaste!</b>';
+    document.getElementById('titleerror').style = 'margin-top: -5%';
     document.getElementById('texterror').innerHTML = '<b>La ruta ingresada no te lleva al objetivo</b>';
+    document.getElementById('texterror').style = 'font-size: 28px';
     document.getElementById('imgError').src = '/img/sad.gif';
-    document.getElementById('imgError').style = 'width: 150px; height: 180px;margin-top:30%'
-
-    close.addEventListener('click', () => {
-      modal_container.classList.remove('show');
-    });
+    document.getElementById('imgError').style = 'width: 120px; height: 150px;margin-top:-5%;margin-left:30%';
   }
 }
 
@@ -409,23 +397,17 @@ function comprobarRuta3(){
 
     document.getElementById('respuesta').value = "aprobado";
     modal_container.classList.add('show');
-
-    close.addEventListener('click', () => {
-      modal_container.classList.remove('show');
-    });
     
   }else{
     
     document.getElementById('respuesta').value = "no aprobado";
     modal_container.classList.add('show');
     document.getElementById('titleerror').innerHTML = '<b>¡Fallaste!</b>';
+    document.getElementById('titleerror').style = 'margin-top: -5%';
     document.getElementById('texterror').innerHTML = '<b>La ruta ingresada no te lleva al objetivo</b>';
+    document.getElementById('texterror').style = 'font-size: 28px';
     document.getElementById('imgError').src = '/img/sad.gif';
-    document.getElementById('imgError').style = 'width: 150px; height: 180px;margin-top:30%'
-
-    close.addEventListener('click', () => {
-      modal_container.classList.remove('show');
-    });
+    document.getElementById('imgError').style = 'width: 120px; height: 150px;margin-top:-5%;margin-left:30%';
   }
 }
 
@@ -533,23 +515,17 @@ function comprobarRuta4(){
 
     document.getElementById('respuesta').value = "aprobado";
     modal_container.classList.add('show');
-
-    close.addEventListener('click', () => {
-      modal_container.classList.remove('show');
-    });
     
   }else{
     
     document.getElementById('respuesta').value = "no aprobado";
     modal_container.classList.add('show');
     document.getElementById('titleerror').innerHTML = '<b>¡Fallaste!</b>';
+    document.getElementById('titleerror').style = 'margin-top: -5%';
     document.getElementById('texterror').innerHTML = '<b>La ruta ingresada no te lleva al objetivo</b>';
+    document.getElementById('texterror').style = 'font-size: 28px';
     document.getElementById('imgError').src = '/img/sad.gif';
-    document.getElementById('imgError').style = 'width: 150px; height: 180px;margin-top:30%'
-
-    close.addEventListener('click', () => {
-      modal_container.classList.remove('show');
-    });
+    document.getElementById('imgError').style = 'width: 120px; height: 150px;margin-top:-5%;margin-left:30%';
   }
 }
 
@@ -658,22 +634,15 @@ function comprobarRuta5(){
 
     document.getElementById('respuesta').value = "aprobado";
     modal_container.classList.add('show');
-
-    close.addEventListener('click', () => {
-      modal_container.classList.remove('show');
-    });
     
   }else{
-    
     document.getElementById('respuesta').value = "no aprobado";
     modal_container.classList.add('show');
     document.getElementById('titleerror').innerHTML = '<b>¡Fallaste!</b>';
+    document.getElementById('titleerror').style = 'margin-top: -5%';
     document.getElementById('texterror').innerHTML = '<b>La ruta ingresada no te lleva al objetivo</b>';
+    document.getElementById('texterror').style = 'font-size: 28px';
     document.getElementById('imgError').src = '/img/sad.gif';
-    document.getElementById('imgError').style = 'width: 150px; height: 180px;margin-top:30%'
-
-    close.addEventListener('click', () => {
-      modal_container.classList.remove('show');
-    });
+    document.getElementById('imgError').style = 'width: 120px; height: 150px;margin-top:-5%;margin-left:30%';
   }
 }
