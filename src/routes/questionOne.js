@@ -12,11 +12,11 @@ router.get('/questionOne', isLoggedIn, (req, res) => {
 router.post('/answerOne', isLoggedIn, async (req, res) => {
 
     const {answer} = req.body;
-    let respuesta = false;
+    let respuesta = 0;
 
     if(answer=="aprobado"){
 
-        respuesta=true;
+        respuesta=5;
     }
 
     const answer1 = {

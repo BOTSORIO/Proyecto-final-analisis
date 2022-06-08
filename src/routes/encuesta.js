@@ -10,17 +10,15 @@ router.get('/encuesta', isLoggedIn, (req, res) => {
 });
 
 router.post('/encuesta', isLoggedIn, async (req, res) => {
-    const { questionOne, questionTwo, questionThree} =req.body;
+    const { questionOne, questionTwo, questionThree} = req.body;
     const newEncuesta ={
         pregunta1:questionOne,
         pregunta2:questionTwo,
         pregunta3:questionThree,
-        user_id: req.user.id
+        id_usuario: req.user.id
     };
 
-    let id = req.user.id;
-
-    await pool.query('INSERT INTO encuesta set ? WHERE id = ?', [newEncuesta,id]);
+    await pool.query('INSERT INTO encuesta set ?', [newEncuesta]);
 
     res.redirect('/general');
 });

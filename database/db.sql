@@ -11,11 +11,11 @@ CREATE TABLE usuario(
 
 CREATE TABLE respuestas_test(
     id int not null PRIMARY KEY auto_increment,
-    pregunta1 boolean,
-    pregunta2 boolean,
-    pregunta3 boolean,
-    pregunta4 boolean,
-    pregunta5 boolean,
+    pregunta1 int,
+    pregunta2 int,
+    pregunta3 int,
+    pregunta4 int,
+    pregunta5 int,
     id_usuario int not null,
     constraint fk_user foreign key (id_usuario) references usuario(id)
 );

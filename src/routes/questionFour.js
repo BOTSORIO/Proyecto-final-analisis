@@ -12,12 +12,12 @@ router.get('/questionFour', isLoggedIn, (req, res) => {
 router.post('/answerFour', isLoggedIn, async (req, res) => {
 
     const {answer} = req.body;
-    let respuesta = false;
+    let respuesta = 0;
     let id = req.user.id;
 
     if(answer=="aprobado"){
 
-        respuesta=true;
+        respuesta=5;
     }
 
     const answer4 = {
@@ -26,8 +26,7 @@ router.post('/answerFour', isLoggedIn, async (req, res) => {
 
     //Se insertan los datos en la BD, await es para procesar esta peticion al tiempo
     //debido a que se hace de manera asincrona
-    await pool.query('UPDATE respuestas_test set ? WHERE id = ?', [answer4, id]);
-    //req.flash('success', 'Link guardado exitosamente');
+    await pool.query('UPDATE respuestas_test set ? WHERE id_usuario = ?', [answer4, id]);
     res.redirect('/test/questionFive');
 });
 
