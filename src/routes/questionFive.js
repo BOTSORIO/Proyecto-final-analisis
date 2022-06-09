@@ -14,14 +14,18 @@ router.post('/answerFive', isLoggedIn, async (req, res) => {
     const {answer} = req.body;
     let respuesta = 0;
     let id = req.user.id;
+    let registro = await pool.query('select * from respuestas_test WHERE id_usuario = ?', [id]);
 
     if(answer=="aprobado"){
 
         respuesta=5;
     }
 
+    let nota = (registro[0].pregunta1+registro[0].pregunta2+registro[0].pregunta3+registro[0].pregunta4+respuesta)/5;
+
     const answer5 = {
-        pregunta5: respuesta
+        pregunta5: respuesta,
+        nota
     };
 
     //Se insertan los datos en la BD, await es para procesar esta peticion al tiempo
