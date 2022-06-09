@@ -29,3 +29,27 @@ CREATE TABLE encuesta(
     constraint fk_user2 foreign key (id_usuario) references usuario(id) 
 );
 
+
+--Promedios de respuestas
+select truncate(avg(pregunta1),2) from respuestas_test;
+select truncate(avg(pregunta2),2) from respuestas_test;
+select truncate(avg(pregunta3),2) from respuestas_test;
+select truncate(avg(pregunta4),2) from respuestas_test;
+select truncate(avg(pregunta5),2) from respuestas_test;
+
+--Respuestas correctas
+select count(pregunta1) from respuestas_test where pregunta1>0;
+select count(pregunta2) from respuestas_test where pregunta2>0;
+select count(pregunta3) from respuestas_test where pregunta3>0;
+select count(pregunta4) from respuestas_test where pregunta4>0;
+select count(pregunta5) from respuestas_test where pregunta5>0;
+
+--Respuestas incorrectas
+select count(pregunta1) from respuestas_test where pregunta1=0;
+select count(pregunta2) from respuestas_test where pregunta2=0;
+select count(pregunta3) from respuestas_test where pregunta3=0;
+select count(pregunta4) from respuestas_test where pregunta4=0;
+select count(pregunta5) from respuestas_test where pregunta5=0;
+
+#Listado ordenado de mayor a menor 
+select * from usuario u left join respuestas_test rt on u.id = rt.id_usuario where u.id =1 group by u.id;

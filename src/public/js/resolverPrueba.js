@@ -208,6 +208,7 @@ function comprobarRuta2(){
           }else{
 
             if(inicio!=34){
+              
               document.getElementById(posicion).appendChild(elem);
             }
           }
