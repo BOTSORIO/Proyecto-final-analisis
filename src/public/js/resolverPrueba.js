@@ -88,6 +88,7 @@ function comprobarRuta1(){
 
               if(inicio!=0){
                   document.getElementById(posicion).appendChild(elem);
+                  
               }
             }
         }
@@ -173,6 +174,7 @@ function comprobarRuta1(){
       document.getElementById('imgError').style = 'width: 120px; height: 150px;margin-top:-5%;margin-left:30%';
     }
 }
+
 
 /*
 * Funcion que comprueba si la ruta del segundo reto que ingreso el usuario
