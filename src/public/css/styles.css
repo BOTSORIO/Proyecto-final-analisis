@@ -398,3 +398,8 @@ margin-top: 1%;
     width: 20%;
     height: 40px;
 }
+
+#card-estadisticas h1 {
+    font-family: 'Indie Flower', cursive;
+    color: rgb(5, 98, 141);
+}

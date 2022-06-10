@@ -2,7 +2,6 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
 const pool = require('../database');
-const helpers = require('../lib/helpers');
 
 passport.use('local.signin', new LocalStrategy({
     usernameField: 'fullname',
@@ -13,10 +12,9 @@ passport.use('local.signin', new LocalStrategy({
     const rows = await pool.query('SELECT * FROM usuario WHERE fullname = ?', [fullname]);
     if(rows.length > 0) {
         const user = rows[0];
-        const validDocument = await helpers.matchPassword(document,user.document);
 
-        if (validDocument){
-            done(null,user,req.flash('success','Bienvenido ' + user.fullname));
+        if(user.document == document){
+            done(null,user,req.flash('success','Bienvenido ' + user.fullname)); 
         }else{
             done(null,false,req.flash('message','El documento ingresado no es correcto'));       
         }
@@ -35,7 +33,7 @@ passport.use('local.signup', new LocalStrategy({
         document,
         administrador: false
     };
-    newUser.document = await helpers.encryptPassword(document);
+    
     const result = await pool.query('INSERT INTO usuario SET ?', [newUser]);
     newUser.id = result.insertId;
     return done(null,newUser);
