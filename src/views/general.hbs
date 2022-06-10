@@ -35,7 +35,22 @@
 </nav>
 
 <div class="container p-4">
-    <div class="row">
+  {{#if user.administrador}}
+
+      <div class="row">
+        <div class="col">
+          
+            <div class="text" id="text-general">
+              <h3><b>¡Hola {{user.fullname}}!</b></h3>
+              <h3><b>Ingresa a tu perfil desde la barra de navegación</b></h3>
+            </div>
+        </div>
+
+        </div>
+      </div>
+
+  {{else}}
+      <div class="row">
       <div class="col">
 
         <div class="title" id="title-general">
@@ -55,4 +70,5 @@
           <img src="/img/general.jpg" alt="" id="img-general">
       </div>
     </div>
+  {{/if}}
 </div>

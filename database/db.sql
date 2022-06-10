@@ -6,7 +6,8 @@ use test_analisis;
 CREATE TABLE usuario(
     id int not null PRIMARY KEY auto_increment,
     fullname varchar(100) not null,
-    document varchar(200) not null
+    document varchar(200) not null,
+    administrador boolean not null
 );
 
 CREATE TABLE respuestas_test(

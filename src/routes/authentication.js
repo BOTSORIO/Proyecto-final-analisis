@@ -38,7 +38,7 @@ router.get('/general', (req, res) => {
 router.get('/logout', isLoggedIn , (req, res) => {
     req.logout(req.user, err => {
         if(err) return next(err);
-        res.redirect('general');
+        res.redirect('/');
       });
 });
 

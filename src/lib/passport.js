@@ -32,7 +32,8 @@ passport.use('local.signup', new LocalStrategy({
 }, async (req,fullname,document,done) => {
     const newUser = {
         fullname,
-        document
+        document,
+        administrador: false
     };
     newUser.document = await helpers.encryptPassword(document);
     const result = await pool.query('INSERT INTO usuario SET ?', [newUser]);
