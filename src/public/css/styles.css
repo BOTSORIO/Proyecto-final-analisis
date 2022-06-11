@@ -399,7 +399,129 @@ margin-top: 1%;
     height: 40px;
 }
 
+
+#card-estadisticas{
+    min-height: 100vh;
+    box-shadow: 0 10px 12px rgba(0, 0, 0, 1);
+    border: none;
+}
+
 #card-estadisticas h1 {
     font-family: 'Indie Flower', cursive;
     color: rgb(5, 98, 141);
+    margin-left: 33%;
+}
+
+#card-estadisticas h3 {
+    font-family: 'Indie Flower', cursive;
+}
+
+
+#card-estadisticas #content {
+    margin-top: -8%;
+}
+
+.text-prom {
+    font-family: 'Courier New', Courier, monospace !important;
+    color: rgb(5, 98, 141);
+}
+
+.text-pos {
+    margin-left: 30%;
+}
+
+#content1{
+    margin-left: 30%;
+    margin-top: 3%;
+}
+
+#content2{
+    margin-left: 30%;
+    margin-top: 3%;
+}
+
+#content3{
+    margin-left: 30%;
+    margin-top: 3%;
+}
+
+#content4{
+    margin-left: 30%;
+    margin-top: 3%;
+}
+
+#content5{
+    margin-left: 30%;
+    margin-top: 3%;
+}
+
+#final {
+    text-align: center;
+    width: 20%;
+    margin-left: 42.5%;
+    margin-top: 1%;
+}
+
+#content-prom {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 2%;
+}
+
+#divisor {
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 3%;
+    border: 1px solid black;
+}
+
+#content-notas {
+    margin-top: -2%;
+}
+
+.names {
+    margin-left: 50%;
+    margin-top: 3%;
+    color: rgb(5, 98, 141);
+    font-family: 'Indie Flower', cursive;
+}
+
+.notas {
+    margin-left: 38%;
+    margin-top: 3%;
+    color: rgb(5, 98, 141);
+    font-family: 'Indie Flower', cursive;
+}
+
+.text-name {
+    margin-left: 10%;
+}
+
+.proms {
+    width: 30%;
+}
+
+.text-nota {
+    margin-left: 55%;
+}
+
+#title-stags h1 {
+    margin-left: 45%;
+}
+
+#img-stags {
+    margin-left: 20%;
+    margin-top: -8%;
+}
+
+#img-stags2 {
+    margin-top: -8%;
+}
+
+#img-stags3 {
+    margin-top: 5%;
+}
+
+#img-stags4 {
+    margin-top: -3%;
 }
