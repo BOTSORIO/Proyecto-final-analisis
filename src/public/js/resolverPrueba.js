@@ -86,9 +86,8 @@ function comprobarRuta1(){
 
             }else{
 
-              if(inicio!=0){
-                  document.getElementById(posicion).appendChild(elem);
-                  
+              if(inicio!=0){ 
+                document.getElementById(posicion).appendChild(elem);
               }
             }
         }

@@ -30,7 +30,10 @@ CREATE TABLE encuesta(
     id_usuario int not null,
     constraint fk_user2 foreign key (id_usuario) references usuario(id) 
 );
-
+--Administradores de la app
+insert into usuario values(1,"Braian", "1193421285",true);
+insert into usuario values(2,"Sebastian", "1193409775",true);
+insert into usuario values(3,"Melissa", "1010017812",true);
 
 --Promedios de respuestas
 select truncate(avg(pregunta1),2) from respuestas_test;
@@ -56,6 +59,7 @@ select count(pregunta5) from respuestas_test where pregunta5=0;
 --Listado ordenado de mayor a menor 
 select u.fullname, rt.nota from usuario u left join respuestas_test rt on u.id = rt.id_usuario order by rt.nota desc;
 
+--Promedios de la encuesta de satisfaccion
 select truncate(avg(pregunta1),2) from encuesta;
 select truncate(avg(pregunta2),2) from encuesta;
 select truncate(avg(pregunta3),2) from encuesta;

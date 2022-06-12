@@ -50,8 +50,8 @@ app.use((req, res, next) => {
 //Rutas (URLs del servidor)
 app.use(require('./routes'));
 app.use(require('./routes/authentication'));
-app.use(require('./routes/perfilAdmin'));
-app.use(require('./routes/perfilUser'));
+app.use(require('./routes/profileAdmin'));
+app.use(require('./routes/profileUser'));
 app.use('/test', require('./routes/questionOne'));
 app.use('/test', require('./routes/questionTwo'));
 app.use('/test', require('./routes/questionThree'));

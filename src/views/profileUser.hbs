@@ -18,9 +18,15 @@
                 <a class="navbar-brand" href="/logout">Cerrar sesión</a>
               </li>
 
-              <li class="nav-item">
-                <a class="navbar-brand" href="profile">Perfil</a>
-              </li>
+              {{#if user.administrador}}
+                <li class="nav-item">
+                  <a class="navbar-brand" href="profileAdmin">Perfil</a>
+                </li>
+              {{else}}
+                <li class="nav-item">
+                  <a class="navbar-brand" href="profileUser">Perfil</a>
+                </li>
+              {{/if}}
 
               {{else}}
                 <a class="navbar-brand" href="/signin">Iniciar sesión</a>
@@ -38,15 +44,24 @@
   <div class="card p-2">
 
     <div class="row" style="margin-top: 5%;margin-left: 20%;margin-bottom: 5%;">
-        <div class="col">
-            <input type="text">
-            <input type="text">
-        </div>
-        <div class="col">
-            <button class="btn btn-success">
-                Sapo
-            </button>
-        </div>
+        <form action="/profileUser" method="post">
+          <div class="col">
+              <input type="number" min="1" max="5" name="preguntaTest">
+              <input type="number" min="1" max="3" name="preguntaEncuesta">
+          </div>
+          <div class="col">
+              <button class="btn btn-success">
+                  Sapo
+              </button>
+          </div>
+        </form>
+
+        {{#if coeficiente}}
+          <h1>El coeficiente de correlacion es {{coeficiente}}</h1>
+        {{else}}
+          <h1>Calcule el coeficiente con las opciones de arriba</h1>
+        {{/if}}
+
     </div>
 
   </div>

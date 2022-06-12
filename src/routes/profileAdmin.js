@@ -5,7 +5,7 @@ const pool = require('../database');
 const { isLoggedIn } = require('../lib/auth'); //Si no esta logueado
 
 
-router.get('/perfilAdmin', isLoggedIn, async (req,res) => {
+router.get('/profileAdmin', isLoggedIn, async (req,res) => {
 
     let prom1 = await pool.query('SELECT TRUNCATE(AVG(pregunta1),1) prom1 FROM respuestas_test');
     let prom2 = await pool.query('SELECT TRUNCATE(AVG(pregunta2),1) prom2 FROM respuestas_test');

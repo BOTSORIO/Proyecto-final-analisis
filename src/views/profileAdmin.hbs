@@ -18,9 +18,15 @@
                 <a class="navbar-brand" href="/logout">Cerrar sesión</a>
               </li>
 
-              <li class="nav-item">
-                <a class="navbar-brand" href="profile">Perfil</a>
-              </li>
+              {{#if user.administrador}}
+                <li class="nav-item">
+                  <a class="navbar-brand" href="profileAdmin">Perfil</a>
+                </li>
+              {{else}}
+                <li class="nav-item">
+                  <a class="navbar-brand" href="profileUser">Perfil</a>
+                </li>
+              {{/if}}
 
               {{else}}
                 <a class="navbar-brand" href="/signin">Iniciar sesión</a>
