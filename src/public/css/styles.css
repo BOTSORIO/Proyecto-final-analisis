@@ -525,3 +525,48 @@ margin-top: 1%;
 #img-stags4 {
     margin-top: -3%;
 }
+
+#card-profile-user{
+    box-shadow: 0 10px 12px rgba(0, 0, 0, 1);
+    border: none;
+}
+
+#card-profile-user h1 {
+    color: rgb(5, 98, 141);
+    font-family: 'Indie Flower', cursive;
+}
+
+#card-profile-user #content {
+    margin-top: -8%;
+}
+
+#card-profile-user h3 {
+    font-family: 'Indie Flower', cursive;
+}
+
+#button-coeficiente {
+    font-size: 18px;
+    margin-top: 7%;
+}
+
+#form-coeficiente {
+    margin-top: -2%;
+}
+
+#label1 {
+    margin-left: 80%;
+}
+
+#label2 {
+    margin-left: 5%;
+}
+
+#preguntaTest {
+    margin-left: 80%;
+    width: 20%;
+}
+
+#preguntaEncuesta {
+    margin-left: 5%;
+    width: 30%;
+}

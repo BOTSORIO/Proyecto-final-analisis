@@ -41,28 +41,185 @@
 </nav>
 
 <div class="container mt-5 p-1">
-  <div class="card p-2">
-
-    <div class="row" style="margin-top: 5%;margin-left: 20%;margin-bottom: 5%;">
-        <form action="/profileUser" method="post">
-          <div class="col">
-              <input type="number" min="1" max="5" name="preguntaTest">
-              <input type="number" min="1" max="3" name="preguntaEncuesta">
+  <div class="card p-2" id="card-profile-user">
+    <br>
+      <div class="card-title p-0">
+        <div class="row">
+          <div class="col-9" id="title-stags">
+            <h1><b>Estadisticas personales</b></h1>
           </div>
           <div class="col">
-              <button class="btn btn-success">
-                  Sapo
-              </button>
+            <img src="/img/encuesta.jpg" alt="" width="150" height="150" id="img-stags">
           </div>
-        </form>
+        </div>
+      </div> 
 
-        {{#if coeficiente}}
-          <h1>El coeficiente de correlacion es {{coeficiente}}</h1>
-        {{else}}
-          <h1>Calcule el coeficiente con las opciones de arriba</h1>
-        {{/if}}
+      <div id="content">
+       <div class="title p-0">
+          <h2><b>Resultados por pregunta</b></h2>
+          <br>
+          <h4 style="color: black !important;"><b>Recuerda que si tu respuesta fue incorrecta se califica con 0 y en caso contrario con 5</b></h4>
+        </div>
 
+        <div>
+            <div class="row" id="content-prom">
+              <div class="col">
+                <div class="d-flex" id="content1">
+                  <h3><b>Pregunta #1: </b></h3>
+                  <div class="proms">
+                    {{#with respuestas}}
+                      <h3 class="text-pos"><b class="text-prom">{{respuesta1}}</b></h3>
+                    {{/with}}
+                  </div>
+                </div>
+     
+                <div class="d-flex" id="content2">
+                  <h3><b>Pregunta #3: </b></h3>
+                  <div class="proms">
+                    {{#with respuestas}}
+                      <h3 class="text-pos"><b class="text-prom">{{respuesta3}}</b></h3>
+                    {{/with}}
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="d-flex" id="content3">
+                  <h3><b>Pregunta #2: </b></h3>
+                  <div class="proms">
+                    {{#with respuestas}}
+                      <h3 class="text-pos"><b class="text-prom">{{respuesta2}}</b></h3>
+                    {{/with}}
+                  </div>
+               </div>
+
+                <div class="d-flex" id="content4">
+                  <h3><b>Pregunta #4:</b></h3>
+                  <div class="proms">
+                    {{#with respuestas}}
+                      <h3 class="text-pos"><b class="text-prom">{{respuesta4}}</b></h3>
+                    {{/with}}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+               <div class="d-flex" id="final">
+                  <h3><b>Pregunta #5: </b></h3>
+                  <div style="width: 30%;">
+                    {{#with respuestas}}
+                      <h3><b class="text-prom">{{respuesta5}}</b></h3>
+                    {{/with}}
+                  </div>
+               </div>
+            </div>
+      </div>
     </div>
+    <hr id="divisor">
+    <div>
+       <div class="title p-0">
+          <div class="row" style="margin-top: -1.5%;">
+            <div class="col" id="title-stags">
+              <img src="/img/dinoR.webp" alt="" width="150" height="130" id="img-stags2">
+            </div>
+            <div class="col-9">
+               <h2 style="margin-left: -30%;"><b>Totales</b></h2>
+            </div>
+          </div>
 
+        </div>
+
+        <div>
+            <div class="row" id="content-prom" style="margin-top: -4% !important;">
+              <div class="col">
+                <div class="d-flex" id="content1">
+                  <h3><b>Correctas: </b></h3>
+                  <div class="proms">
+                    {{#with totales}}
+                      <h3 class="text-pos"><b class="text-prom">{{correctas}}</b></h3>
+                    {{/with}}
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="d-flex" id="content3">
+                  <h3><b>Incorrectas: </b></h3>
+                  <div class="proms">
+                    {{#with totales}}
+                      <h3 class="text-pos"><b class="text-prom">{{incorrectas}}</b></h3>
+                    {{/with}}
+                  </div>
+               </div>
+              </div>
+            </div>
+      </div>
+    </div>
+    <hr id="divisor">
+      <div id="content-notas">
+       <div class="title p-0">
+          <div class="row">
+            <div class="col-9" id="title-stags">
+                 <h2 style="margin-left: 35%;"><b>Nota final</b></h2>
+            </div>
+            <div class="col">
+              <img src="/img/dinoF.jpg" alt="" width="160" height="130" id="img-stags4">
+            </div>
+          </div>
+        </div>
+        <div class="d-flex" style="margin-top: -5%;">
+          <h3 style="margin-left: 41%;"><b>Tu nota final es: </b></h3>
+          {{#with totales}}
+            <h1 style="margin-left: 1%;margin-top: -0.5%"><b>{{nota}}</b></h1>
+          {{/with}}
+        </div>
+      </div>
+    <hr id="divisor">
+    <div>
+       <div class="title p-0">
+          <div class="row" style="margin-top: -1.5%;">
+            <div class="col" id="title-stags">
+              <img src="/img/dinoFi.jpg" alt="" width="150" height="130" id="img-stags2">
+            </div>
+            <div class="col-9">
+               <h2 style="margin-left: -30%;"><b>Coeficiente de correlación</b></h2>
+            </div>
+          </div>
+
+           <form action="/profileUser" method="post" id="form-coeficiente">
+              <div class="row">
+                <div class="col-8">
+                  <div class="row">
+                    <div class="col">
+                      <h3 id="label1"><b><label for="preguntaTest">Test</label></b></h3>
+                      <input id="preguntaTest" type="number" min="1" max="5" name="preguntaTest">
+                    </div>
+                    <div class="col-5">
+                      <h3 id="label2"><b><label for="preguntaEncuesta">Encuesta</label></b></h3>
+                      <input id="preguntaEncuesta" type="number" min="1" max="3" name="preguntaEncuesta">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-3" style="text-align: left;">
+                  <button class="btn btn-success" id="button-coeficiente">
+                    Calcular
+                  </button>
+                </div>
+              </div>
+           </form>
+          <br>
+          <br>
+        {{#if coeficiente}}
+          <h1 style="color: rgb(5, 98, 141) !important;margin-left: -3%;"><b>{{coeficiente}}</b></h1>
+        {{/if}}
+        
+        </div>
+      </div>
+      <br>
+    </div>
   </div>
 </div>
+<br>
+<br>
+<br>
