@@ -27,44 +27,49 @@ async function obtenerEstadisticas(id_usuario){
     let pregunta4 = await pool.query('select pregunta4 res4 from respuestas_test where id_usuario = ?', [id_usuario]);
     let pregunta5 = await pool.query('select pregunta5 res5 from respuestas_test where id_usuario = ?', [id_usuario]);
 
-    const respuestas = {
-        respuesta1:pregunta1[0].res1,
-        respuesta2:pregunta2[0].res2,
-        respuesta3:pregunta3[0].res3,
-        respuesta4:pregunta4[0].res4,
-        respuesta5:pregunta5[0].res5
-    }
+    if(pregunta1.length!=0 && pregunta2.length!=0 && pregunta3.length!=0 && pregunta4.length!=0 && pregunta5.length!=0){
 
-    let can1 = await pool.query('select count(*) cant1 from respuestas_test where id_usuario= ? and pregunta1>0', [id_usuario]);
-    let can2 = await pool.query('select count(*) cant2 from respuestas_test where id_usuario= ? and pregunta2>0', [id_usuario]);
-    let can3 = await pool.query('select count(*) cant3 from respuestas_test where id_usuario= ? and pregunta3>0', [id_usuario]);
-    let can4 = await pool.query('select count(*) cant4 from respuestas_test where id_usuario= ? and pregunta4>0', [id_usuario]);
-    let can5 = await pool.query('select count(*) cant5 from respuestas_test where id_usuario= ? and pregunta5>0', [id_usuario]);
-
-    let total = [can1[0].cant1,can2[0].cant2,can3[0].cant3,can4[0].cant4,can5[0].cant5];
-    
-    let correctas = 0;
-    let incorrectas = 0;
-
-    for (let i = 0; i < total.length; i++) {
-        if(total[i] == 1){
-            correctas += 1;
-        }else{
-            incorrectas += 1;
+        const respuestas = {
+            respuesta1:pregunta1[0].res1,
+            respuesta2:pregunta2[0].res2,
+            respuesta3:pregunta3[0].res3,
+            respuesta4:pregunta4[0].res4,
+            respuesta5:pregunta5[0].res5
         }
-    }
-
-    let nota = await pool.query('select nota nota from respuestas_test where id_usuario = ?', [id_usuario]);
     
-    const totales = {
-        correctas: correctas,
-        incorrectas: incorrectas,
-        nota: nota[0].nota
+        let can1 = await pool.query('select count(*) cant1 from respuestas_test where id_usuario= ? and pregunta1>0', [id_usuario]);
+        let can2 = await pool.query('select count(*) cant2 from respuestas_test where id_usuario= ? and pregunta2>0', [id_usuario]);
+        let can3 = await pool.query('select count(*) cant3 from respuestas_test where id_usuario= ? and pregunta3>0', [id_usuario]);
+        let can4 = await pool.query('select count(*) cant4 from respuestas_test where id_usuario= ? and pregunta4>0', [id_usuario]);
+        let can5 = await pool.query('select count(*) cant5 from respuestas_test where id_usuario= ? and pregunta5>0', [id_usuario]);
+    
+        let total = [can1[0].cant1,can2[0].cant2,can3[0].cant3,can4[0].cant4,can5[0].cant5];
+        
+        let correctas = 0;
+        let incorrectas = 0;
+    
+        for (let i = 0; i < total.length; i++) {
+            if(total[i] == 1){
+                correctas += 1;
+            }else{
+                incorrectas += 1;
+            }
+        }
+    
+        let nota = await pool.query('select nota nota from respuestas_test where id_usuario = ?', [id_usuario]);
+        
+        const totales = {
+            correctas: correctas,
+            incorrectas: incorrectas,
+            nota: nota[0].nota
+        }
+    
+        let estadisticas=[respuestas,totales];
+
+        return estadisticas;
     }
 
-    let estadisticas=[respuestas,totales];
-
-    return estadisticas;
+    return undefined;
 }
 
 /*
@@ -74,11 +79,19 @@ async function obtenerEstadisticas(id_usuario){
 router.get('/profileUser', isLoggedIn, async (req,res) => {
     
     let id = req.user.id;
+    let estadisticas;
+
+    await obtenerEstadisticas(id).then(resultados=>
     
-    obtenerEstadisticas(id).then(resultados=>
-    
-        res.render('profileUser', {respuestas:resultados[0],totales:resultados[1]})
+        estadisticas=resultados,
     );
+
+    if(estadisticas == undefined){
+
+        res.render('profileUser');
+    }else{
+        res.render('profileUser', {respuestas:estadisticas[0],totales:estadisticas[1]});
+    }
 
 });
 
@@ -97,6 +110,7 @@ router.post('/profileUser', isLoggedIn, async (req, res) => {
     let sumatoriaDenominador1=0;
     let sumatoriaDenominador2=0;
     let coeficiente;
+    let estadisticas;
     var arr = Array.from(datos);
 
     for(let i=0;i<arr.length;i++){
@@ -114,10 +128,17 @@ router.post('/profileUser', isLoggedIn, async (req, res) => {
         coeficiente='0';
     }
 
-    obtenerEstadisticas(req.user.id).then(resultados=>
+    await obtenerEstadisticas(req.user.id).then(resultados=>
     
-        res.render('profileUser', {respuestas:resultados[0],totales:resultados[1], coeficiente})
+        estadisticas=resultados
     );
+
+    if(estadisticas == undefined){
+
+        res.render('profileUser');
+    }else{
+        res.render('profileUser', {respuestas:estadisticas[0],totales:estadisticas[1], coeficiente});
+    }
 });
 
 

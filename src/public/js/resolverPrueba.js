@@ -63,6 +63,10 @@ function añadirImagenDerecha() {
   document.getElementById("ruta").appendChild(elem);
 }
 
+/*
+* Función que da pausa la ejecución de la aplicación en un
+* periodo determinado de tiempo
+*/
 function sleep(ms) {
   return new Promise(
     resolve => setTimeout(resolve, ms)
