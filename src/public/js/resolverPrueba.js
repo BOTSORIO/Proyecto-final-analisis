@@ -1,4 +1,12 @@
 /*
+* Proyecto final de la asignatura Analisis de algoritmos
+* Elaborado por:
+* Braian Camilo Piedrahita Rodriguez
+* Sebastian Quintero Osorio
+* Melissa Ortiz Perez
+*/
+
+/*
 * Modal para mostrar mensajes de exito o error al completar cada prueba
 */
 const modal_container = document.getElementById('modal_container');

@@ -1,3 +1,15 @@
+/*
+* Proyecto final de la asignatura Analisis de algoritmos
+* Elaborado por:
+* Braian Camilo Piedrahita Rodriguez
+* Sebastian Quintero Osorio
+* Melissa Ortiz Perez
+*/
+
+/*
+* Modulo que exporta las credenciales de la base de
+* datos para iniciar la conexión
+*/
 module.exports = {
     database: {
 

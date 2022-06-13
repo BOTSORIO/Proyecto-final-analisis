@@ -1,14 +1,30 @@
+/*
+* Proyecto final de la asignatura Analisis de algoritmos
+* Elaborado por:
+* Braian Camilo Piedrahita Rodriguez
+* Sebastian Quintero Osorio
+* Melissa Ortiz Perez
+*/
+
+/*
+* Constantes usadas para la ejecucion de la aplicación
+*/
 const express = require('express');
 const router = express.Router();
-
 const pool = require('../database');
 const { isLoggedIn } = require('../lib/auth'); //Si no esta logueado
 
-
+/*
+* Enrutador que carga la vista de la pregunta 5 del test
+*/
 router.get('/questionFive', isLoggedIn, (req, res) => {
     res.render('preguntas/questionFive')
 });
 
+/*
+* Enrutador que guarda el resultado de la pregunta 5 del test
+* en la base de datos junto con la nota del test en general
+*/
 router.post('/answerFive', isLoggedIn, async (req, res) => {
 
     const {answer} = req.body;

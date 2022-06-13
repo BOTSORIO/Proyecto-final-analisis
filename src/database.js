@@ -1,11 +1,22 @@
+/*
+* Proyecto final de la asignatura Analisis de algoritmos
+* Elaborado por:
+* Braian Camilo Piedrahita Rodriguez
+* Sebastian Quintero Osorio
+* Melissa Ortiz Perez
+*/
+
+/*
+* Constantes usadas para la ejecucion de la aplicación
+*/
 const mysql = require('mysql');
-
 const {promisify} = require('util');
-
 const {database} = require('./keys'); //toma una parte del objeto keys, toma la propiedad database
-
 const pool = mysql.createPool(database); //crea la conexion con la base de datos
 
+/*
+* Conexión entre la aplicacion y la base de datos
+*/
 pool.getConnection((err, connection) => {
 
     //Si ocurre un error, entonces...

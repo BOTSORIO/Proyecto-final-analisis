@@ -1,10 +1,24 @@
+/*
+* Proyecto final de la asignatura Analisis de algoritmos
+* Elaborado por:
+* Braian Camilo Piedrahita Rodriguez
+* Sebastian Quintero Osorio
+* Melissa Ortiz Perez
+*/
+
+/*
+* Constantes usadas para la ejecucion de la aplicación
+*/
 const express = require('express');
 const router = express.Router();
-
 const pool = require('../database');
-const { isLoggedIn } = require('../lib/auth'); //Si no esta logueado
+const { isLoggedIn } = require('../lib/auth');
 
-
+/*
+* Enrutador que carga la vista del perfil del administrador de la aplicación
+* con todas las estadisticas de los usuarios que participaron en el test que
+* extrae de la base de datos
+*/
 router.get('/profileAdmin', isLoggedIn, async (req,res) => {
 
     let prom1 = await pool.query('SELECT TRUNCATE(AVG(pregunta1),1) prom1 FROM respuestas_test');

@@ -1,8 +1,22 @@
+/*
+* Proyecto final de la asignatura Analisis de algoritmos
+* Elaborado por:
+* Braian Camilo Piedrahita Rodriguez
+* Sebastian Quintero Osorio
+* Melissa Ortiz Perez
+*/
+
+/*
+* Constantes usadas para la ejecucion de la aplicación
+*/
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-
 const pool = require('../database');
 
+/*
+* Función de la librería passport que comprueba las credenciales
+* ingresadas por el usuario para iniciar sesión en la aplicación
+*/
 passport.use('local.signin', new LocalStrategy({
     usernameField: 'fullname',
     passwordField: 'document',
@@ -23,6 +37,10 @@ passport.use('local.signin', new LocalStrategy({
     }
 }));
 
+/*
+* Función de la librería passport que registra las credenciales
+* del usuario en la base de datos de la aplicación
+*/
 passport.use('local.signup', new LocalStrategy({
     usernameField: 'fullname',
     passwordField: 'document',
@@ -39,10 +57,18 @@ passport.use('local.signup', new LocalStrategy({
     return done(null,newUser);
 }));
 
+/*
+* Función de la librería passport que serializa el objeto del usuario
+* para ser usado en la aplicación
+*/
 passport.serializeUser((user,done) => {
   done(null,user.id);
 });
 
+/*
+* Función de la librería passport que deserializa el objeto del usuario
+* para ser usado en la aplicación
+*/
 passport.deserializeUser( async (id,done) =>{
     const rows = await pool.query('SELECT * FROM usuario WHERE id = ?', [id]);
     done(null,rows[0]);
