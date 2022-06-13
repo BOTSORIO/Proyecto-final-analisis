@@ -63,17 +63,22 @@ function añadirImagenDerecha() {
   document.getElementById("ruta").appendChild(elem);
 }
 
+function sleep(ms) {
+  return new Promise(
+    resolve => setTimeout(resolve, ms)
+  );
+}
+
 /*
 * Funcion que comprueba si la ruta del primer reto que ingreso el usuario
 * es correcta o incorrecta, tambien agrega el camino ingresado anteriormente
 */
-function comprobarRuta1(){
+async function comprobarRuta1(){
     var elementos = document.getElementsByClassName('contenedor-ruta');
     var arr = Array.from(elementos);
 
     let tam = arr[0].childNodes.length;
-    let inicio = 30;
-    
+    let inicio = 30;    
     
     for(let i=0;i<tam;i++){
 
@@ -96,6 +101,7 @@ function comprobarRuta1(){
 
               if(inicio!=0){ 
                 document.getElementById(posicion).appendChild(elem);
+                await sleep(1000);
               }
             }
         }
@@ -117,6 +123,7 @@ function comprobarRuta1(){
             
             if(inicio!=0){
               document.getElementById(posicion).appendChild(elem);
+              await sleep(1000);
             }
           }
         }
@@ -138,6 +145,7 @@ function comprobarRuta1(){
             
             if(inicio!=0){
               document.getElementById(posicion).appendChild(elem);
+              await sleep(1000);
             }
           }
         }
@@ -159,6 +167,7 @@ function comprobarRuta1(){
             
             if(inicio!=0){
               document.getElementById(posicion).appendChild(elem);
+              await sleep(1000);
             }
           }
         }
@@ -187,13 +196,12 @@ function comprobarRuta1(){
 * Funcion que comprueba si la ruta del segundo reto que ingreso el usuario
 * es correcta o incorrecta, tambien agrega el camino ingresado anteriormente
 */
-function comprobarRuta2(){
+async function comprobarRuta2(){
   var elementos = document.getElementsByClassName('contenedor-ruta');
   var arr = Array.from(elementos);
 
   let tam = arr[0].childNodes.length;
   let inicio = 7;
-  
   
   for(let i=0;i<tam;i++){
 
@@ -217,6 +225,7 @@ function comprobarRuta2(){
             if(inicio!=34){
               
               document.getElementById(posicion).appendChild(elem);
+              await sleep(1000);
             }
           }
       }
@@ -238,6 +247,7 @@ function comprobarRuta2(){
           
           if(inicio!=34){
             document.getElementById(posicion).appendChild(elem);
+            await sleep(1000);
           }
         }
       }
@@ -259,6 +269,7 @@ function comprobarRuta2(){
           
           if(inicio!=34){
             document.getElementById(posicion).appendChild(elem);
+            await sleep(1000);
           }
         }
       }
@@ -280,6 +291,7 @@ function comprobarRuta2(){
           
           if(inicio!=34){
             document.getElementById(posicion).appendChild(elem);
+            await sleep(1000);
           }
         }
       }
@@ -307,7 +319,7 @@ function comprobarRuta2(){
 * Funcion que comprueba si la ruta del tercer reto que ingreso el usuario
 * es correcta o incorrecta, tambien agrega el camino ingresado anteriormente
 */
-function comprobarRuta3(){
+async function comprobarRuta3(){
   var elementos = document.getElementsByClassName('contenedor-ruta');
   var arr = Array.from(elementos);
 
@@ -335,6 +347,7 @@ function comprobarRuta3(){
 
             if(inicio!=30){
               document.getElementById(posicion).appendChild(elem);
+              await sleep(1000);
             }
           }
       }
@@ -356,6 +369,7 @@ function comprobarRuta3(){
           
           if(inicio!=30){
             document.getElementById(posicion).appendChild(elem);
+            await sleep(1000);
           }
         }
       }
@@ -377,6 +391,7 @@ function comprobarRuta3(){
           
           if(inicio!=30){
             document.getElementById(posicion).appendChild(elem);
+            await sleep(1000);
           }
         }
       }
@@ -398,6 +413,7 @@ function comprobarRuta3(){
           
           if(inicio!=30){
             document.getElementById(posicion).appendChild(elem);
+            await sleep(1000);
           }
         }
       }
@@ -425,7 +441,7 @@ function comprobarRuta3(){
 * Funcion que comprueba si la ruta del cuarto reto que ingreso el usuario
 * es correcta o incorrecta, tambien agrega el camino ingresado anteriormente
 */
-function comprobarRuta4(){
+async function comprobarRuta4(){
   var elementos = document.getElementsByClassName('contenedor-ruta');
   var arr = Array.from(elementos);
 
@@ -453,6 +469,7 @@ function comprobarRuta4(){
 
             if(inicio!=25){
               document.getElementById(posicion).appendChild(elem);
+              await sleep(1000);
             }
           }
       }
@@ -474,6 +491,7 @@ function comprobarRuta4(){
           
           if(inicio!=25){
             document.getElementById(posicion).appendChild(elem);
+            await sleep(1000);
           }
         }
       }
@@ -495,6 +513,7 @@ function comprobarRuta4(){
           
           if(inicio!=25){
             document.getElementById(posicion).appendChild(elem);
+            await sleep(1000);
           }
         }
       }
@@ -516,6 +535,7 @@ function comprobarRuta4(){
           
           if(inicio!=25){
             document.getElementById(posicion).appendChild(elem);
+            await sleep(1000);
           }
         }
       }
@@ -543,7 +563,7 @@ function comprobarRuta4(){
 * Funcion que comprueba si la ruta del quinto reto que ingreso el usuario
 * es correcta o incorrecta, tambien agrega el camino ingresado anteriormente
 */
-function comprobarRuta5(){
+async function comprobarRuta5(){
   var elementos = document.getElementsByClassName('contenedor-ruta');
   var arr = Array.from(elementos);
 
@@ -572,6 +592,7 @@ function comprobarRuta5(){
 
             if(inicio!=11){
               document.getElementById(posicion).appendChild(elem);
+              await sleep(1000);
             }
           }
       }
@@ -593,6 +614,7 @@ function comprobarRuta5(){
           
           if(inicio!=11){
             document.getElementById(posicion).appendChild(elem);
+            await sleep(1000);
           }
         }
       }
@@ -614,6 +636,7 @@ function comprobarRuta5(){
           
           if(inicio!=11){
             document.getElementById(posicion).appendChild(elem);
+            await sleep(1000);
           }
         }
       }
@@ -635,6 +658,7 @@ function comprobarRuta5(){
           
           if(inicio!=11){
             document.getElementById(posicion).appendChild(elem);
+            await sleep(1000);
           }
         }
       }
